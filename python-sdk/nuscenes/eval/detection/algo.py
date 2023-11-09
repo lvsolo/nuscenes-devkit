@@ -48,7 +48,7 @@ def accumulate(gt_boxes: EvalBoxes,
     if verbose:
         print("Found {} PRED of class {} out of {} total across {} samples.".
               format(len(pred_confs), class_name, len(pred_boxes.all), len(pred_boxes.sample_tokens)))
-
+    #####matching stratogy: greedy matching ranked by confidence/score.########
     # Sort by confidence.
     sortind = [i for (v, i) in sorted((v, i) for (i, v) in enumerate(pred_confs))][::-1]
 
